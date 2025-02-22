@@ -3,4 +3,6 @@
     --font-pixel: 'PressStart2P', sans-serif;
     --font-main: 'Inter Variable', sans-serif;
     --header-background: #fff;
+    --heading-weight: 700;
+    --paragraph-weight: 400;
 }
