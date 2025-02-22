@@ -1,73 +1,79 @@
+.sparks {
+  opacity: 0;
+}
+
+.main-body {
+  fill: none;
+  transition: fill 0.3s linear;
+}
+
+.core {
+  fill: white;
+  transition: fill 0.3s linear;
+}
+
+.contour {
+  transition: fill 0.1s linear;
+}
+
 svg:hover .main-body {
-    cursor: pointer;
-    fill: black;
-    transition: fill 0.3s ease;
-    transition-delay: 0.05s;
-  }
-  
-  svg:hover .core {
-    cursor: pointer;
-    fill: black;
-    transition: fill 0.3s ease;
-    transition-delay: 0.03s;
-  }
-  
-  svg:active .main-body {
-    cursor: pointer;
-    fill: red;
-  }
-  
-  svg:active .core {
-    cursor: pointer;
-    fill: red;
-  }
-  
-  svg:active .contour {
-    cursor: pointer;
-    fill: black;
-  }
-  
-  .like-icon.is-liked {
-    animation: like-scale 0.3s ease-in forwards;
-  }
-  
-  .like-icon.is-liked .sparks {
-    animation: sparks 0.3s ease;
-  }
-  
-  .like-icon.is-liked .contour {
-    fill: red;
-    transition: fill 0.3s ease;
-    transition-delay: 0.05s;
-  }
-  
-  .like-icon.is-liked .main-body {
-    fill: red;
-    transition: fill 0.3s ease;
-    transition-delay: 0.05s;
-  }
-  
-  .like-icon.is-liked .core {
-    fill: red;
-    transition: fill 0.3s ease;
-    transition-delay: 0.03s;
-  }
-  
+  fill: black;
+  transition: fill 0.3s 0.05s ease;
+}
+
+svg:hover .core {
+  fill: black;
+  transition: fill 0.3s ease;
+}
+
+svg:active .main-body,
+svg:active .core {
+  fill: red;
+  transition: fill 0.3s ease;
+}
+
+.like-icon.is-liked {
+  animation: like-scale 0.3s 0.1s ease-in forwards;
+}
+
+.like-icon.is-liked .sparks {
+  animation: sparks 0.3s 0.3s ease;
+}
+
+.like-icon.is-liked .contour {
+  fill: red;
+  transition: fill 0.3s 0.06s ease;
+}
+
+.like-icon.is-liked .main-body {
+  fill: red;
+  transition: fill 0.3s 0.05s ease;
+}
+
+.like-icon.is-liked .core {
+  fill: red;
+  transition: fill 0.3s ease;
+}
+
+.like-icon:not(.is-liked) .contour {
+  fill: black;
+  transition: fill 0.1s linear;
+}
 
 @keyframes like-scale {
-    50% {
-      transform: scale(1.25);
-    }
-    100% {
-      transform: scale(1);
-    }
+  50% {
+    transform: scale(1.25);
   }
-  
-  @keyframes sparks {
-    50% {
-      opacity: 1;
-    }
-    100% {
-      opacity: 0;
-    }
+  100% {
+    transform: scale(1);
   }
+}
+
+@keyframes sparks {
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
