@@ -270,7 +270,6 @@ dialog[open] button {
   transition: color 0.5s ease-in-out;
   color: #fff;
   mix-blend-mode: difference;
-  z-index: 1;
 }
 
 .button:hover .disket_icon {
