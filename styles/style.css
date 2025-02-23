@@ -8,7 +8,7 @@
   background-attachment: fixed;
   background-color: #fff;
   font-family: var(--font-main);
-  font-variation-settings: 'wght' var(--paragraph-weight);
+  font-variation-settings: "wght" var(--paragraph-weight);
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -22,9 +22,9 @@ img {
 }
 
 .header {
+  position: relative;
   font-family: var(--font-pixel);
-  font-variation-settings: 'wght' var(--heading-weight);
-  font-size: 25px;
+  font-size: 24.5px;
   padding-left: 14px;
   padding-right: 14px;
   background-color: var(--header-background);
@@ -41,7 +41,6 @@ img {
   font-size: clamp(10px, 5vw, 14px);
   margin-top: 20px;
   margin-bottom: 120px;
-  font-variation-settings: 'wght' var(--heading-weight);
 }
 
 .car-vehicle {
@@ -55,15 +54,16 @@ img {
   display: flex;
   text-align: right;
   justify-content: flex-end;
+  max-inline-size: 700px;
+  position: relative;
 }
 
 .label-text {
   position: absolute;
-  right: 15px;
+  right: 10px;
   background: transparent;
   font-family: var(--font-pixel);
   font-size: 14px;
-  font-variation-settings: 'wght' var(--heading-weight);
   margin-top: 20px;
   text-shadow: 1px #fff;
   z-index: 1;
@@ -71,7 +71,7 @@ img {
 }
 
 .card-title {
-  font-variation-settings: 'wght' var(--heading-weight);
+  font-variation-settings: "wght" var(--heading-weight);
   font-size: 18px;
   padding: 4px 10px 4px 10px;
   border: 2px solid #000;
@@ -82,7 +82,7 @@ img {
   flex-direction: column;
   margin: 25px 27px 25px 24px;
   font-size: 18px;
-  font-variation-settings: 'wght' var(--paragraph-weight);
+  font-variation-settings: "wght" var(--paragraph-weight);
   line-height: 21px;
   gap: 27px;
 }
@@ -95,7 +95,6 @@ img {
   text-align: center;
   font-size: 14px;
   font-family: var(--font-pixel);
-  font-variation-settings: 'wght' var(--heading-weight);
   color: #000;
   transition: box-shadow 0.3s ease;
 }
@@ -109,33 +108,8 @@ img {
   height: 100%;
   background-color: #000;
   transform: translateX(-100%);
-  transition: transform 0.3s ease;
+  transition: transform 0.5s ease-in-out;
   z-index: 0;
-}
-
-.button span {
-  position: relative;
-  z-index: 1;
-}
-
-.button p {
-  position: relative;
-  z-index: 1;
-}
-
-.button .dialog_icon use {
-  position: relative;
-  z-index: 1;
-}
-
-.button:hover .dialog_icon use {
-  fill: #fff;
-  cursor: pointer;
-}
-
-.button:focus-visible {
-  outline: none;
-  box-shadow: 2px 2px 0px #000;
 }
 
 .button:hover::before {
@@ -143,8 +117,26 @@ img {
   cursor: pointer;
 }
 
-.button:hover span {
+.button span,
+.button p {
+  position: relative;
+  z-index: 1;
+  mix-blend-mode: difference;
   color: #fff;
+}
+
+.button:focus-visible {
+  outline: none;
+  box-shadow: 2px 2px 0px #000;
+}
+
+.button:hover .dialog_icon use {
+  fill: #fff;
+  cursor: pointer;
+}
+
+.button:hover span {
+  color:#fff;
   cursor: pointer;
 }
 
@@ -163,7 +155,7 @@ img {
 }
 
 .card__like-button {
-  padding: 0px 35px;
+  inline-size: 130px;
 }
 
 .disket-button {
@@ -193,7 +185,6 @@ img {
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: border 0.3s ease;
 }
 
 .card__icon-button:focus-visible {
@@ -204,7 +195,6 @@ img {
 .button__text {
   font-size: 14px;
   font-family: var(--font-pixel);
-  font-variation-settings: 'wght' var(--heading-weight);
 }
 
 .filter-gray {
@@ -253,8 +243,8 @@ dialog[open] div {
   align-items: center;
   gap: 20px;
   grid-template-columns: min-content, 300px;
-  margin-left: 40px;
-  margin-top: 30px;
+  margin-left: 22px;
+  margin-top: 10px;
   margin-bottom: 30px;
   text-align: left;
   text-transform: uppercase;
@@ -268,17 +258,24 @@ dialog[open] .message {
 dialog[open] button {
   padding: 13px 115px;
   text-transform: uppercase;
+  margin-bottom: 10px;
+  margin-left: 22px;
+  margin-right: 22px;
 }
 
 .disket_icon {
   width: 28px;
   height: 28px;
   z-index: 1;
+  transition: color 0.5s ease-in-out;
+  color: #fff;
+  mix-blend-mode: difference;
+  z-index: 1;
 }
 
 .button:hover .disket_icon {
   cursor: pointer;
-  color: white;
+  color: #fff;
 }
 
 .dialog_icon {
@@ -303,6 +300,7 @@ dialog[open] button {
 
   .header-paragraph {
     font-size: 23px;
+    margin-bottom: 125px;
   }
 
   .card-description {
@@ -311,7 +309,8 @@ dialog[open] button {
   }
 
   .label-text {
-    right: 397px;
+    right: 25px;
+    margin-top: 25px;
   }
 
   .disket-button {
@@ -319,6 +318,24 @@ dialog[open] button {
     margin-top: 50px;
     padding-bottom: 15px;
     gap: 12px;
+  }
+
+  dialog[open] {
+    inline-size: 353px;
+  }
+
+  dialog[open] div {
+    margin-left: 15px;
+    margin-right: 15px;
+    margin-top: 15px;
+  }
+
+  dialog[open] button {
+    padding: 10px 115px;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+    margin-left: 15px;
+    margin-right: 15px;
   }
 
   .disket_icon {
