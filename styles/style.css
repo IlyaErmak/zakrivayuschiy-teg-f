@@ -65,7 +65,8 @@ img {
   font-family: var(--font-pixel);
   font-size: 14px;
   margin-top: 20px;
-  text-shadow: 1px #fff;
+  text-shadow: 1px 1px 0px #fff;
+  opacity: 50%;
   z-index: 1;
   mix-blend-mode: hard-light;
 }
